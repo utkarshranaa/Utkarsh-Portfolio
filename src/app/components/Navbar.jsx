@@ -24,13 +24,13 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
+    <nav className="fixed mx-auto top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
+          className="text-2xl md:text-4xl text-white font-semibold"
         >
-          LOGO
+          Utkarsh
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
@@ -56,11 +56,23 @@ const Navbar = () => {
                 <NavLink href={link.path} title={link.title} />
               </li>
             ))}
+            {/* GitHub Button */}
+            <li>
+              <a
+                href="https://github.com/utkarshranaa"  // Replace with your actual GitHub URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-white bg-blue-500 hover:bg-blue-400 py-1 px-4 rounded-lg"
+              >
+                <span>GitHub</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
     </nav>
+
   );
 };
 
